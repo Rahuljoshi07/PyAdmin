@@ -3,7 +3,7 @@ REST API Backend Application
 Flask-based RESTful API with CRUD operations, authentication, and SQL database integration
 """
 
-from flask import Flask, request, jsonify, g
+from flask import Flask, request, jsonify, g, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flask_limiter import Limiter
@@ -17,7 +17,7 @@ import hashlib
 import secrets
 
 # Initialize Flask app
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='')
 
 # ==================== CONFIGURATION ====================
 
@@ -390,6 +390,12 @@ def internal_error(error):
 
 @app.route('/')
 def index():
+    """Serve the frontend application"""
+    return send_from_directory(app.static_folder, 'index.html')
+
+
+@app.route('/api')
+def api_info():
     """API Home endpoint"""
     return jsonify({
         'success': True,
