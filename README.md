@@ -1,9 +1,10 @@
-# REST API Backend Application v2.0
+# AdminPanel - Backend Application v2.0
 
-A full-featured RESTful API built with Python and Flask, including JWT authentication, API keys, pagination, search, filtering, rate limiting, and more.
+A full-featured RESTful API built with Python and Flask, including JWT authentication, API keys, pagination, search, filtering, rate limiting, and a modern dark-themed dashboard UI.
 
 ## Features
 
+### Backend
 - **JWT Authentication** - Secure token-based authentication
 - **API Key Support** - Alternative authentication via API keys
 - **User Roles** - Admin and user role-based access control
@@ -18,6 +19,15 @@ A full-featured RESTful API built with Python and Flask, including JWT authentic
 - **Input Validation** - Server-side validation for all inputs
 - **Error Handling** - Consistent error responses with proper HTTP status codes
 
+### Frontend Dashboard
+- **Modern Dark Theme** - Professional dark UI design
+- **Responsive Layout** - Works on desktop and mobile
+- **Real-time Stats** - Dashboard with user/product statistics
+- **Product Management** - Add, edit, delete products with search/filter
+- **User Management** - Admin-only user management
+- **API Key Management** - Generate and revoke API keys
+- **Toast Notifications** - Feedback for all actions
+
 ## Project Structure
 
 ```
@@ -30,7 +40,11 @@ rest-api-backend/
 ├── README.md               # Documentation
 ├── .gitignore              # Git ignore file
 ├── api.log                 # Request logs (generated)
-└── database.db             # SQLite database (generated)
+├── database.db             # SQLite database (generated)
+└── static/                 # Frontend files
+    ├── index.html          # Main HTML page
+    ├── style.css           # CSS styling
+    └── app.js              # JavaScript logic
 ```
 
 ## Installation
