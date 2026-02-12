@@ -198,7 +198,7 @@ python -m pytest tests/ --cov=app
 
 ## 📄 License
 
-MIT License - feel free to use for any project.
+Feel free to use for any project.
 
 ---
 
