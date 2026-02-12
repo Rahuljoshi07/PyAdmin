@@ -1,341 +1,507 @@
-# AdminPanel - Backend Application v2.0
+<p align="center">
+  <img src="https://img.icons8.com/fluency/96/000000/api-settings.png" alt="AdminPanel Logo"/>
+</p>
 
-A full-featured RESTful API built with Python and Flask, including JWT authentication, API keys, pagination, search, filtering, rate limiting, and a modern dark-themed dashboard UI.
+<h1 align="center">🚀 AdminPanel</h1>
 
-## Features
+<p align="center">
+  <strong>A Modern Full-Stack REST API with Dashboard</strong>
+</p>
 
-### Backend
-- **JWT Authentication** - Secure token-based authentication
-- **API Key Support** - Alternative authentication via API keys
-- **User Roles** - Admin and user role-based access control
-- **CRUD Operations** - Full Create, Read, Update, Delete for Users and Products
-- **Pagination** - Paginated responses for list endpoints
-- **Search & Filtering** - Search by text, filter by fields
-- **Sorting** - Sort results by any field
-- **Rate Limiting** - Protect API from abuse
-- **CORS Enabled** - Cross-origin resource sharing
-- **Request Logging** - All requests logged to file
-- **Health Check** - Endpoint for monitoring
-- **Input Validation** - Server-side validation for all inputs
-- **Error Handling** - Consistent error responses with proper HTTP status codes
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Flask-2.3.3-green?style=for-the-badge&logo=flask&logoColor=white" alt="Flask"/>
+  <img src="https://img.shields.io/badge/SQLite-Database-orange?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite"/>
+  <img src="https://img.shields.io/badge/JWT-Authentication-red?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT"/>
+</p>
 
-### Frontend Dashboard
-- **Modern Dark Theme** - Professional dark UI design
-- **Responsive Layout** - Works on desktop and mobile
-- **Real-time Stats** - Dashboard with user/product statistics
-- **Product Management** - Add, edit, delete products with search/filter
-- **User Management** - Admin-only user management
-- **API Key Management** - Generate and revoke API keys
-- **Toast Notifications** - Feedback for all actions
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"/>
+  <img src="https://img.shields.io/badge/Version-2.0-brightgreen.svg" alt="Version"/>
+  <img src="https://img.shields.io/badge/Status-Active-success.svg" alt="Status"/>
+</p>
 
-## Project Structure
+---
 
+## 📋 Table of Contents
+
+- [Overview](#-overview)
+- [Features](#-features)
+- [Screenshots](#-screenshots)
+- [Quick Start](#-quick-start)
+- [API Documentation](#-api-documentation)
+- [Authentication](#-authentication)
+- [Testing](#-testing)
+- [Project Structure](#-project-structure)
+- [Technologies](#-technologies)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## 🌟 Overview
+
+**AdminPanel** is a production-ready REST API backend built with Python and Flask, featuring a sleek dark-themed dashboard UI. Perfect for learning, prototyping, or as a foundation for your next project.
+
+### Why AdminPanel?
+
+✅ **Complete Solution** - Backend API + Frontend Dashboard  
+✅ **Secure** - JWT Auth, API Keys, Rate Limiting  
+✅ **Scalable** - Pagination, Search, Filtering, Sorting  
+✅ **Well-Tested** - Comprehensive pytest test suite  
+✅ **Well-Documented** - Clear API documentation & Postman collection  
+
+---
+
+## ✨ Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 🔧 Backend API
+- 🔐 **JWT Authentication** with 24-hour tokens
+- 🔑 **API Key Support** for service-to-service auth
+- 👥 **Role-Based Access** (Admin/User)
+- 📝 **Full CRUD** for Users & Products
+- 📄 **Pagination** with customizable page size
+- 🔍 **Search & Filter** across all fields
+- ↕️ **Sorting** (asc/desc) on any field
+- ⚡ **Rate Limiting** to prevent abuse
+- 🌐 **CORS Enabled** for cross-origin requests
+- 📊 **Health Check** endpoint for monitoring
+- ✅ **Input Validation** on all endpoints
+- 📜 **Request Logging** to file
+
+</td>
+<td width="50%">
+
+### 🎨 Frontend Dashboard
+- 🌙 **Dark Theme** - Modern, eye-friendly design
+- 📱 **Responsive** - Works on all devices
+- 📈 **Live Statistics** - Real-time dashboard stats
+- 📦 **Product Management** - Full CRUD with filters
+- 👤 **User Management** - Admin-only controls
+- 🔑 **API Key Manager** - Generate & revoke keys
+- 🔔 **Toast Notifications** - Action feedback
+- 🔄 **Auto-refresh** - Keep data current
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📸 Screenshots
+
+<details>
+<summary>🖥️ Click to view screenshots</summary>
+
+### Login Page
 ```
-rest-api-backend/
-├── app.py                  # Main Flask application
-├── config.py               # Configuration settings
-├── seed.py                 # Database seeder script
-├── requirements.txt        # Python dependencies
-├── postman_collection.json # Postman collection for testing
-├── README.md               # Documentation
-├── .gitignore              # Git ignore file
-├── api.log                 # Request logs (generated)
-├── database.db             # SQLite database (generated)
-└── static/                 # Frontend files
-    ├── index.html          # Main HTML page
-    ├── style.css           # CSS styling
-    └── app.js              # JavaScript logic
+┌─────────────────────────────────────────┐
+│              AdminPanel                  │
+│           Backend Dashboard              │
+│  ┌─────────────┬─────────────┐          │
+│  │   Login     │  Register   │          │
+│  └─────────────┴─────────────┘          │
+│  ┌───────────────────────────┐          │
+│  │ Username: admin           │          │
+│  └───────────────────────────┘          │
+│  ┌───────────────────────────┐          │
+│  │ Password: ••••••          │          │
+│  └───────────────────────────┘          │
+│  ┌───────────────────────────┐          │
+│  │         LOGIN →           │          │
+│  └───────────────────────────┘          │
+└─────────────────────────────────────────┘
 ```
 
-## Installation
+### Dashboard
+```
+┌─────────────────────────────────────────────────────────────┐
+│ AdminPanel          Dashboard                    admin 👤   │
+├──────────┬──────────────────────────────────────────────────┤
+│ Dashboard│  ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐    │
+│ Products │  │ 6      │ │ 15     │ │ 6      │ │ 15     │    │
+│ Users    │  │ Users  │ │Products│ │ Active │ │Available│   │
+│ API Keys │  └────────┘ └────────┘ └────────┘ └────────┘    │
+│          │                                                  │
+│          │  ┌─────────────────────────────────────────────┐│
+│          │  │ API Health                                  ││
+│          │  │ Status: ✓ healthy  Database: ✓ healthy     ││
+│          │  │ Version: 2.0       Last Check: 1:24 am     ││
+│          │  └─────────────────────────────────────────────┘│
+│  Logout  │                                                  │
+└──────────┴──────────────────────────────────────────────────┘
+```
 
-### 1. Clone the repository
+</details>
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8+
+- pip (Python package manager)
+- Git
+
+### Installation
+
 ```bash
-git clone <repository-url>
-cd rest-api-backend
-```
+# 1. Clone the repository
+git clone https://github.com/yourusername/adminpanel.git
+cd adminpanel
 
-### 2. Create virtual environment
-```bash
+# 2. Create virtual environment (recommended)
 python -m venv venv
-```
 
-### 3. Activate virtual environment
-**Windows:**
-```bash
+# Windows
 venv\Scripts\activate
-```
 
-**macOS/Linux:**
-```bash
+# macOS/Linux
 source venv/bin/activate
-```
 
-### 4. Install dependencies
-```bash
+# 3. Install dependencies
 pip install -r requirements.txt
-```
 
-### 5. Run the application
-```bash
+# 4. Seed sample data (optional)
+python seed.py
+
+# 5. Run the application
 python app.py
 ```
 
-The server will start at `http://localhost:5000`
+### 🎉 That's it!
 
-### 6. (Optional) Seed sample data
-```bash
-python seed.py
+Open **http://localhost:5000** in your browser.
+
+**Default Login:**
+| Username | Password | Role |
+|----------|----------|------|
+| admin | admin123 | Admin |
+
+---
+
+## 📖 API Documentation
+
+### Base URL
+```
+http://localhost:5000/api
 ```
 
-## Default Admin Credentials
-- **Username:** admin
-- **Password:** admin123
+### Endpoints Overview
 
-## API Endpoints
+<details>
+<summary>🔐 Authentication</summary>
 
-### Authentication
+| Method | Endpoint | Description | Auth |
+|:------:|----------|-------------|:----:|
+| POST | `/auth/register` | Register new user | ❌ |
+| POST | `/auth/login` | Login & get token | ❌ |
+| GET | `/auth/me` | Get current user | ✅ |
+| GET | `/auth/api-keys` | List API keys | ✅ |
+| POST | `/auth/api-keys` | Create API key | ✅ |
+| DELETE | `/auth/api-keys/:id` | Delete API key | ✅ |
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/auth/register` | Register new user |
-| POST | `/api/auth/login` | Login and get JWT token |
-| GET | `/api/auth/me` | Get current user (auth required) |
-| GET | `/api/auth/api-keys` | List API keys (auth required) |
-| POST | `/api/auth/api-keys` | Create API key (auth required) |
-| DELETE | `/api/auth/api-keys/<id>` | Delete API key (auth required) |
+</details>
 
-### Users
+<details>
+<summary>👥 Users (Admin Only)</summary>
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/users` | Get all users (paginated, auth required) |
-| GET | `/api/users/<id>` | Get user by ID (auth required) |
-| POST | `/api/users` | Create new user (admin only) |
-| PUT | `/api/users/<id>` | Update user (auth required) |
-| DELETE | `/api/users/<id>` | Delete user (admin only) |
+| Method | Endpoint | Description | Auth |
+|:------:|----------|-------------|:----:|
+| GET | `/users` | List all users | 🔒 Admin |
+| GET | `/users/:id` | Get user by ID | 🔒 Admin |
+| POST | `/users` | Create user | 🔒 Admin |
+| PUT | `/users/:id` | Update user | 🔒 Admin |
+| DELETE | `/users/:id` | Delete user | 🔒 Admin |
 
-### Products
+</details>
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/products` | Get all products (paginated, public) |
-| GET | `/api/products/<id>` | Get product by ID (public) |
-| GET | `/api/products/categories` | Get all categories (public) |
-| POST | `/api/products` | Create new product (auth required) |
-| POST | `/api/products/bulk` | Bulk create products (admin only) |
-| PUT | `/api/products/<id>` | Update product (auth required) |
-| DELETE | `/api/products/<id>` | Delete product (auth required) |
+<details>
+<summary>📦 Products</summary>
 
-### Health & Stats
+| Method | Endpoint | Description | Auth |
+|:------:|----------|-------------|:----:|
+| GET | `/products` | List products | ✅ |
+| GET | `/products/:id` | Get product | ✅ |
+| GET | `/products/categories` | List categories | ✅ |
+| POST | `/products` | Create product | ✅ |
+| POST | `/products/bulk` | Bulk create | 🔒 Admin |
+| PUT | `/products/:id` | Update product | ✅ |
+| DELETE | `/products/:id` | Delete product | ✅ |
+| DELETE | `/products/bulk` | Bulk delete | 🔒 Admin |
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/` | API info |
-| GET | `/api/health` | Health check |
-| GET | `/api/stats` | API statistics (auth required) |
+</details>
 
-## Authentication
+<details>
+<summary>❤️ Health & Stats</summary>
 
-### Using JWT Token
+| Method | Endpoint | Description | Auth |
+|:------:|----------|-------------|:----:|
+| GET | `/` | API info | ❌ |
+| GET | `/health` | Health check | ❌ |
+| GET | `/stats` | Statistics | ✅ |
+
+</details>
+
+### Query Parameters
+
 ```bash
-# Login to get token
+# Pagination
+?page=1&per_page=10
+
+# Search
+?search=laptop
+
+# Filter
+?category=Electronics&min_price=100&max_price=500
+
+# Sort
+?sort_by=price&sort_order=asc
+
+# Combined
+?search=laptop&category=Electronics&sort_by=price&page=1&per_page=5
+```
+
+### Response Format
+
+```json
+// Success
+{
+  "success": true,
+  "message": "Operation successful",
+  "data": { ... }
+}
+
+// Paginated
+{
+  "success": true,
+  "data": [...],
+  "pagination": {
+    "page": 1,
+    "per_page": 10,
+    "total_pages": 5,
+    "total_items": 50,
+    "has_next": true,
+    "has_prev": false
+  }
+}
+
+// Error
+{
+  "success": false,
+  "error": "NotFound",
+  "message": "Resource not found"
+}
+```
+
+---
+
+## 🔐 Authentication
+
+### Option 1: JWT Token
+
+```bash
+# 1. Login to get token
 curl -X POST http://localhost:5000/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"username": "admin", "password": "admin123"}'
 
-# Use token in requests
+# Response: { "data": { "token": "eyJhbG..." } }
+
+# 2. Use token in requests
 curl http://localhost:5000/api/users \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN"
+  -H "Authorization: Bearer eyJhbG..."
 ```
 
-### Using API Key
+### Option 2: API Key
+
 ```bash
-# Create API key (after login)
+# 1. Create API key (requires JWT first)
 curl -X POST http://localhost:5000/api/auth/api-keys \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"name": "My API Key"}'
+  -d '{"name": "My Service Key"}'
 
-# Use API key in requests
-curl http://localhost:5000/api/users \
+# 2. Use API key in requests
+curl http://localhost:5000/api/products \
   -H "X-API-Key: YOUR_API_KEY"
 ```
 
-## Pagination, Search & Filtering
+---
 
-### Pagination
-```
-GET /api/products?page=1&per_page=10
-```
+## 🧪 Testing
 
-### Search
-```
-GET /api/products?search=laptop
-GET /api/users?search=john
-```
-
-### Filtering
-```
-GET /api/products?category=Electronics
-GET /api/products?min_price=50&max_price=200
-GET /api/products?is_available=true&in_stock=true
-GET /api/users?role=admin&is_active=true
-```
-
-### Sorting
-```
-GET /api/products?sort_by=price&sort_order=asc
-GET /api/products?sort_by=created_at&sort_order=desc
-```
-
-### Combined Example
-```
-GET /api/products?search=laptop&category=Electronics&min_price=500&sort_by=price&sort_order=asc&page=1&per_page=5
-```
-
-## API Examples with Postman
-
-### Register User
-- **Method:** POST
-- **URL:** `http://localhost:5000/api/auth/register`
-- **Body:**
-```json
-{
-    "username": "newuser",
-    "email": "newuser@example.com",
-    "password": "password123"
-}
-```
-
-### Login
-- **Method:** POST
-- **URL:** `http://localhost:5000/api/auth/login`
-- **Body:**
-```json
-{
-    "username": "admin",
-    "password": "admin123"
-}
-```
-
-### Create Product (Auth Required)
-- **Method:** POST
-- **URL:** `http://localhost:5000/api/products`
-- **Headers:** `Authorization: Bearer <token>`
-- **Body:**
-```json
-{
-    "name": "Gaming Laptop",
-    "description": "High-performance gaming laptop",
-    "price": 1499.99,
-    "quantity": 10,
-    "category": "Electronics"
-}
-```
-
-### Bulk Create Products (Admin Only)
-- **Method:** POST
-- **URL:** `http://localhost:5000/api/products/bulk`
-- **Headers:** `Authorization: Bearer <admin_token>`
-- **Body:**
-```json
-[
-    {"name": "Product 1", "price": 99.99, "category": "Category A"},
-    {"name": "Product 2", "price": 149.99, "category": "Category B"}
-]
-```
-
-## Response Format
-
-### Success Response
-```json
-{
-    "success": true,
-    "message": "Operation successful",
-    "data": { ... }
-}
-```
-
-### Paginated Response
-```json
-{
-    "success": true,
-    "items": [...],
-    "pagination": {
-        "page": 1,
-        "per_page": 10,
-        "total_pages": 5,
-        "total_items": 50,
-        "has_next": true,
-        "has_prev": false
-    }
-}
-```
-
-### Error Response
-```json
-{
-    "success": false,
-    "error": "Error Type",
-    "message": "Error description"
-}
-```
-
-## HTTP Status Codes
-
-| Code | Description |
-|------|-------------|
-| 200 | Success |
-| 201 | Created |
-| 400 | Bad Request (validation error) |
-| 401 | Unauthorized (authentication required) |
-| 403 | Forbidden (insufficient permissions) |
-| 404 | Not Found |
-| 409 | Conflict (duplicate data) |
-| 429 | Too Many Requests (rate limit) |
-| 500 | Internal Server Error |
-
-## Rate Limits
-
-- **Default:** 200 requests/day, 50 requests/hour
-- **Registration:** 5 requests/hour
-- **Login:** 10 requests/minute
-
-## Technologies Used
-
-- **Python 3.x** - Programming language
-- **Flask** - Web framework
-- **Flask-SQLAlchemy** - SQL ORM
-- **Flask-CORS** - Cross-origin support
-- **Flask-Limiter** - Rate limiting
-- **PyJWT** - JWT authentication
-- **SQLite** - Database
-- **Git** - Version control
-
-## Version Control (Git)
+### Run Tests
 
 ```bash
-# Initialize repository
-git init
+# Install test dependencies
+pip install pytest pytest-cov
 
-# Add all files
-git add .
+# Run all tests
+python -m pytest tests/ -v
 
-# Commit changes
-git commit -m "Add features: JWT auth, pagination, filtering, rate limiting"
+# Run specific test file
+python -m pytest tests/test_auth.py -v
 
-# Push to remote
-git push origin main
+# Run with coverage report
+python -m pytest tests/ --cov=app --cov-report=html
+
+# Run specific test
+python -m pytest tests/test_auth.py::TestRegistration::test_register_success -v
 ```
 
-## Environment Variables
+### Test Structure
+
+```
+tests/
+├── __init__.py
+├── conftest.py          # Fixtures & configuration
+├── test_auth.py         # Authentication tests (15 tests)
+├── test_health.py       # Health & utility tests (8 tests)
+├── test_products.py     # Product CRUD tests (18 tests)
+└── test_users.py        # User management tests (14 tests)
+```
+
+### Using Postman
+
+Import `postman_collection.json` into Postman for ready-to-use API requests.
+
+---
+
+## 📁 Project Structure
+
+```
+adminpanel/
+│
+├── 📄 app.py                  # Main Flask application (1200+ lines)
+├── ⚙️ config.py               # Configuration settings
+├── 🌱 seed.py                 # Database seeder (sample data)
+├── 📦 requirements.txt        # Python dependencies
+├── 📬 postman_collection.json # Postman testing collection
+├── 📖 README.md               # This file
+├── 🚫 .gitignore              # Git ignore rules
+│
+├── 📂 static/                 # Frontend assets
+│   ├── 🌐 index.html          # Main dashboard HTML
+│   ├── 🎨 style.css           # Dark theme styles
+│   └── ⚡ app.js              # Frontend JavaScript
+│
+├── 📂 tests/                  # Test suite
+│   ├── conftest.py            # Test fixtures
+│   ├── test_auth.py           # Auth tests
+│   ├── test_health.py         # Health tests
+│   ├── test_products.py       # Product tests
+│   └── test_users.py          # User tests
+│
+└── 📂 generated/
+    ├── 📋 api.log             # Request logs
+    └── 🗄️ database.db         # SQLite database
+```
+
+---
+
+## 🛠️ Technologies
+
+<table>
+<tr>
+<td align="center" width="100">
+<img src="https://skillicons.dev/icons?i=python" width="48" height="48" alt="Python" />
+<br><sub>Python 3.x</sub>
+</td>
+<td align="center" width="100">
+<img src="https://skillicons.dev/icons?i=flask" width="48" height="48" alt="Flask" />
+<br><sub>Flask</sub>
+</td>
+<td align="center" width="100">
+<img src="https://skillicons.dev/icons?i=sqlite" width="48" height="48" alt="SQLite" />
+<br><sub>SQLite</sub>
+</td>
+<td align="center" width="100">
+<img src="https://skillicons.dev/icons?i=html" width="48" height="48" alt="HTML5" />
+<br><sub>HTML5</sub>
+</td>
+<td align="center" width="100">
+<img src="https://skillicons.dev/icons?i=css" width="48" height="48" alt="CSS3" />
+<br><sub>CSS3</sub>
+</td>
+<td align="center" width="100">
+<img src="https://skillicons.dev/icons?i=js" width="48" height="48" alt="JavaScript" />
+<br><sub>JavaScript</sub>
+</td>
+</tr>
+</table>
+
+| Package | Version | Purpose |
+|---------|---------|---------|
+| Flask | 2.3.3 | Web framework |
+| Flask-SQLAlchemy | 3.1.1 | SQL ORM |
+| Flask-CORS | 4.0.0 | Cross-origin support |
+| Flask-Limiter | 3.5.0 | Rate limiting |
+| PyJWT | 2.8.0 | JWT authentication |
+| pytest | 7.4.3 | Testing framework |
+
+---
+
+## ⚙️ Configuration
+
+### Environment Variables
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| SECRET_KEY | JWT secret key | Random generated |
-| DATABASE_URL | Database connection URL | SQLite local |
+| `SECRET_KEY` | JWT signing key | Auto-generated |
+| `DATABASE_URL` | Database path | `sqlite:///database.db` |
+| `DEBUG` | Debug mode | `True` |
 
-## License
+### Rate Limits
 
-This project is open source and available under the MIT License.
+| Endpoint | Limit |
+|----------|-------|
+| Default | 200/day, 50/hour |
+| Registration | 5/hour |
+| Login | 10/minute |
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how:
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing`)
+3. **Commit** changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to branch (`git push origin feature/amazing`)
+5. **Open** a Pull Request
+
+### Development Setup
+
+```bash
+# Clone your fork
+git clone https://github.com/YOUR_USERNAME/adminpanel.git
+
+# Install dev dependencies
+pip install -r requirements.txt
+pip install pytest pytest-cov
+
+# Run tests before committing
+python -m pytest tests/ -v
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">
+  Made with ❤️ using Python & Flask
+</p>
+
+<p align="center">
+  <a href="#-adminpanel">Back to top ⬆️</a>
+</p>
