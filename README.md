@@ -2,7 +2,7 @@
   <img src="https://img.icons8.com/fluency/96/api-settings.png" alt="Logo"/>
 </p>
 
-<h1 align="center">🚀 AdminPanel</h1>
+<h1 align="center">� PyAdmin</h1>
 <p align="center"><strong>Full-Stack REST API with Modern Dashboard</strong></p>
 
 <p align="center">
@@ -34,8 +34,8 @@
 
 ```bash
 # Clone & setup
-git clone https://github.com/yourusername/adminpanel.git
-cd adminpanel
+git clone https://github.com/Rahuljoshi07/PyAdmin.git
+cd PyAdmin
 
 # Install dependencies
 pip install -r requirements.txt
@@ -124,7 +124,7 @@ curl http://localhost:5000/api/products \
 ## 📁 Project Structure
 
 ```
-adminpanel/
+PyAdmin/
 ├── app.py                  # Flask application
 ├── config.py               # Configuration
 ├── seed.py                 # Database seeder
